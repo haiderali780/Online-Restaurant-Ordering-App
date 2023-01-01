@@ -2,6 +2,7 @@
 import {Fragment} from 'react'
 import foodImage from '../../assests/meals.jpg'
 import classes from './Header.module.css'
+import HeaderCartButton from './HeaderCartButton'
 
 const Header=props=>
 { 
@@ -11,7 +12,7 @@ const Header=props=>
         <h1>
         The Neighborhood Nook
         </h1>
-        <button>Cart</button>
+        <HeaderCartButton />
     </header>
     <div className={classes['main-image']}>
    <img src={foodImage} alt="A table full of Dishes"/>
