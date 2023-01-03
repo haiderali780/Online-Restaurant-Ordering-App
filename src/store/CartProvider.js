@@ -1,5 +1,6 @@
 import CartContext from "./cart-context";
 import { useReducer } from "react";
+
 const defaultCartState = {
   items: [],
   totalAmount: 0
@@ -41,5 +42,4 @@ const CartProvider = (props) => {
     </CartContext.Provider>
   );
 };
-
 export default CartProvider;
