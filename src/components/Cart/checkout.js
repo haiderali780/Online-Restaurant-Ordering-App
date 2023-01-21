@@ -17,6 +17,8 @@ const Checkout = (props) => {
   const postalCodeInputRef = useRef();
   const cityInputRef = useRef();
 
+  
+
   const confirmHandler = (event) => {
     event.preventDefault();
 
@@ -47,7 +49,12 @@ const Checkout = (props) => {
       return;
     }
 
-    // Submit cart data
+    props.onConfirm({
+      name: enteredName,
+      street: enteredStreet,
+      city: enteredCity,
+      postalCode: enteredPostalCode,
+    });
   };
 
   const nameControlClasses = `${classes.control} ${
@@ -67,7 +74,7 @@ const Checkout = (props) => {
     <form className={classes.form} onSubmit={confirmHandler}>
       <div className={nameControlClasses}>
         <label htmlFor='name'>Your Name</label>
-        <input type='text' id='name' ref={nameInputRef} />
+        <input type='text' id='name' ref={nameInputRef}/>
         {!formInputsValidity.name && <p>Please enter a valid name!</p>}
       </div>
       <div className={streetControlClasses}>
